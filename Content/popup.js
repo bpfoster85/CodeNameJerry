@@ -7,7 +7,6 @@ $(function () {
     $("#moreinfo").click(function () {
         SwitchView();
         if ($('#moreinfosection').is(":visible")) {
-            GetReaccuringPaymentData();
             GetHistoryPaymentData();
         }
 
@@ -69,7 +68,7 @@ function SwitchView() {
 function GetHistoryPaymentData() {
     var results = [];
     var tableTemplate = [];
-    $("#reaccuringdatalayout").html('');
+    $("#historydatalayout").html('');
 tableTemplate.push('<tr><td class="subtitle">Payment Type</td>'+
 '<td class="subtitle">Amount</td><td class="subtitle">Donation Date</td></tr>');
 
@@ -92,45 +91,7 @@ tableTemplate.push('<tr><td class="subtitle">Payment Type</td>'+
             var dTemplate = "<tr><td>"+pType +"</td><td>$" 
             + d.Amount.toFixed(2) + "</td><td>" + new Date(d.DonationDate) + "</td><tr>";
             tableTemplate.push(dTemplate);
-
-
         });
         $("#historydatalayout").append(tableTemplate.join(''));
     });
 }
-function GetReaccuringPaymentData() {
-    var results = [];
-    var tableTemplate = [];
-    $("#reaccuringdatalayout").html('');
-tableTemplate.push('<tr><td class="subtitle">Payment Type</td>'+
-'<td class="subtitle">Amount</td><td class="subtitle">Donation Date</td></tr>');
-
-    chrome.storage.sync.get("DonationList", function (result) {
-        results = result.DonationList.Donations;
-        $.each(results, function (i, d) {
-            var pType;
-            switch (d.DonationType) {
-                case 1:
-                pType = "One-Time";
-                    break;
-                case 2:
-                pType = "Weekly";
-                    break;
-                case 3:
-                pType = "Monthly";
-                    break;
-            }
-
-            var dTemplate = "<tr><td>"+pType +"</td><td>$" 
-            if(d.DonationType != 1){
-            + d.Amount.toFixed(2) + "</td><td>" + new Date(d.DonationDate) + "</td><tr>";
-            tableTemplate.push(dTemplate);
-            }
-
-
-        });
-        $("#reaccuringdatalayout").append(tableTemplate.join(''));
-    });
-}
-
-

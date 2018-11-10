@@ -1,7 +1,7 @@
  body{
      width:600px;
      min-width:600px;
-     min-height:600px;
+     min-height:500px;
      margin:0;
      padding-bottom:10em;
  }
@@ -57,7 +57,9 @@ hr {
      margin-left:1em;
      background-color:#DF6E0D;
  }
-
+#donationamt{
+    margin-top:1em;
+}
  #donate
  {
      float:right;
@@ -70,7 +72,7 @@ hr {
     margin:.25em auto;
 }
 #shareicons .shareicon{
-    margin:0 .25em;
+    margin:0 .5em;
 }
 
  #fbshare{
@@ -87,13 +89,8 @@ hr {
  }
  #paymenthistory{
      margin-top:2em;
-     max-height: 11em;
+     max-height: 25em;
      overflow: auto;
  }
 
- #paymentrecurring{
-    margin-top:2em;
-    max-height: 11em;
-    overflow: auto;
-}
  /****************Chris**************/
