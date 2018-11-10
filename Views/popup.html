@@ -16,31 +16,15 @@
     </header>
     <div id="maincontent">
         <section id="donationamt">
-            <p>slider to pick amount and feeding the kids</p>
-            <div class="row">
-                <div class="col s9">
-                   
-                        <p class="range-field">
-                            <input type="range" id="test5" min="0" max="100" />
-                        </p>
-                    
-                </div>
-                <div class="col s3">
-                    <!-- Dropdown Trigger -->
-                    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
 
-
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="#!">one</a></li>
-                        <li><a href="#!">two</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="#!">three</a></li>
-                        <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                        <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                    </ul>
-                </div>
-            </div>
+                <div id="stickDiv">
+                        <img src="https://static.thenounproject.com/png/203593-200.png" width="20px" height="20px" />
+                        <img src="https://static.thenounproject.com/png/203593-200.png" width="20px" height="20px" />
+                        <img src="https://static.thenounproject.com/png/203593-200.png" width="20px" height="20px" />                        
+                    </div>
+                <p id="slider-wrapper" class="range-field">
+                        <input type="range" id="donation-slider" value="3" min="1" max="10" />
+                    </p>                    
         </section>
 
 
@@ -101,6 +85,7 @@
     <script src="../Content/jquery.js"></script>
     <script src="../Content/DBTrans.js"></script>
     <script src="../Content/popup.js"></script>
+    <script src="../Content/materialize.min.js"></script>
 
 </body>
 
