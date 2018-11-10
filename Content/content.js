@@ -26,7 +26,11 @@ if (url.includes("checkout")) {
                 console.log(event.path[0].value);
                 $("#stickDiv").html("")
                 for (i = 0; i < event.path[0].value; i++) {
-                    $("#stickDiv").append('<img src="https://static.thenounproject.com/png/203593-200.png" width = "20px" height="20px"/>');
+                    if(i %2 == 0){
+                        $("#stickDiv").append('<img src="http://icons-for-free.com/free-icons/png/512/570640.png" width = "40px" height="40px"/>');
+                    }else{
+                        $("#stickDiv").append('<img src="https://image.flaticon.com/icons/png/512/146/146010.png" width = "40px" height="40px"/>');
+                    }
                 }
                 var donation = .50 * event.path[0].value;
                 $('#initialDonation').text(donation.toFixed(2));
