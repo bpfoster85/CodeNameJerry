@@ -1,7 +1,9 @@
  body{
      width:600px;
      min-width:600px;
+     min-height:600px;
      margin:0;
+     padding-bottom:10em;
  }
  header{
      text-align:center;
@@ -18,18 +20,66 @@
     padding:1em;
     height:6em;
     width:100%;
-    position:absolute;
     color:#fff;
     bottom:0;
     border-top: 8px solid #B5BD00;
+    position:absolute;    
  }
 .title{
     width:100%;
     text-align: center;
     font-size: 20px;
+    color:#004358;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+.slidercontrol{
+    width:60%;
+    margin-right:1em;
+    float:left;
+}
+.timeframecontrol{
+    width:30%;
+    float:left;
 }
 
  /****************Bryan**************/
- 
+ #contactform label{
+     font-size: 18px;
+     color:#004358;
+ }
+ #moreinfo
+ {
+     float:left;
+     margin-left:1em;
+     background-color:#DF6E0D;
+ }
 
+ #donate
+ {
+     float:right;
+     margin-right:1em;
+     background-color:#A7222E;
+ }
+#shareicons{
+    width:100%;
+    text-align: center;
+    margin:1em auto;
+}
+#shareicons .shareicon{
+    margin:0 .25em;
+}
+
+ #fbshare{
+     color: #3B5998;
+ }
+ #tshare{
+    color: #1DA1F2;
+ }
+ #eshare{
+    color: #86AFD4;
+ }
  /****************Chris**************/

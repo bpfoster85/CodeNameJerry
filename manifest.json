@@ -25,7 +25,8 @@
             "js": [
                 "Content/content.js",
                 "Content/jquery.js",
-                "Content/materialize.min.js"
+                "Content/materialize.min.js",
+                "Content/DBTrans.js"
             ],
             "css": [
                 "CSS/overlay.css",

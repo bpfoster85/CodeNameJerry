@@ -9,6 +9,7 @@ if (url.includes("checkout")) {
 
         $.get(chrome.runtime.getURL('Views/overlay.html'), function (data) {
             var inject = document.createElement("div");
+            inject.classList.add("overlay-root");
             inject.innerHTML = data;
             var totalMoneyDouble = moneyAmount.substring(moneyAmount.indexOf('$') + 1, moneyAmount.indexOf(' '));
             inject.querySelector("#totalSpent").innerText = totalMoneyDouble;
@@ -19,7 +20,6 @@ if (url.includes("checkout")) {
             
             inject.querySelector("#donation-slider").value = initialFedStudents;
 
-           
             document.body.insertBefore(inject, document.body.firstChild);
 
             inject.querySelector("#donation-slider").addEventListener("input", (event) => {
@@ -37,12 +37,7 @@ if (url.includes("checkout")) {
                 $('#initialFedStudents').text(Math.ceil(donation / .50));
             });
 
-            inject.querySelector("#payPalImg").addEventListener("click", (event) => {
-                var amountDonated =  $('#initialDonation').text();
-                var numChildrenFed = 90; // Add get from database
-                var htmlStr = "<div>Thank you for your donation of $" + amountDonated + "!</div><div>The total Number of Children you have fed is: " + numChildrenFed + "</div>";
-                $(".overlay-content").html(htmlStr);
-            });
+            inject.querySelector("#payPalImg").addEventListener("click", (event) => donateButtonClick(event));
 
             inject.querySelector("#close").addEventListener("click", (event) => {
                 $("#wholeContainer").remove();
@@ -56,4 +51,12 @@ if (url.includes("checkout")) {
 else if (url == "https://www.amazon.com/gp/buy/spc/handlers/display.html?hasWorkingJavascript=1") {
     var amazonMoneyAmount = document.getElementsByClassName("grand-total-price")[0].innerText;
     console.log(amazonMoneyAmount);
+}
+
+
+function donateButtonClick(event) {
+    var amountDonated =  $('#initialDonation').text();
+    var numChildrenFed = 90; // Add get from database
+    var htmlStr = "<div>Thank you for your donation of $" + amountDonated + "!</div><div>The total Number of Children you have fed is: " + numChildrenFed + "</div>";
+    $(".overlay-content").html(htmlStr);
 }
