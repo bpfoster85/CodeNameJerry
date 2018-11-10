@@ -18,6 +18,7 @@ if (url.includes("checkout")) {
             inject.querySelector("#initialFedStudents").innerText = Math.ceil(initialDonation / .50);
             
             inject.querySelector("#donation-slider").value = initialFedStudents;
+
            
             document.body.insertBefore(inject, document.body.firstChild);
 
@@ -27,6 +28,16 @@ if (url.includes("checkout")) {
                 for (i = 0; i < event.path[0].value; i++) {
                     $("#stickDiv").append('<img src="https://static.thenounproject.com/png/203593-200.png" width = "20px" height="20px"/>');
                 }
+                var donation = .50 * event.path[0].value;
+                $('#initialDonation').text(donation.toFixed(2));
+                $('#initialFedStudents').text(Math.ceil(donation / .50));
+            });
+
+            inject.querySelector("#payPalImg").addEventListener("click", (event) => {
+                var amountDonated =  $('#initialDonation').text();
+                var numChildrenFed = 90; // Add get from database
+                var htmlStr = "<div>Thank you for your donation of $" + amountDonated + "!</div><div>The total Number of Children you have fed is: " + numChildrenFed + "</div>";
+                $(".overlay-content").html(htmlStr);
             });
         });
 
