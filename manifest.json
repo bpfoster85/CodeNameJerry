@@ -25,6 +25,9 @@
             "js": [
                 "Content/content.js",
                 "Content/jquery.js"
+            ],
+            "css": [
+                "CSS/overlay.css"
             ]
         }
     ],
