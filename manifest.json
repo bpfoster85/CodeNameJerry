@@ -6,7 +6,8 @@
     "manifest_version": 2,
     "background": {
         "scripts": [
-            "BackgroundEvents/background.js"
+            "BackgroundEvents/background.js",
+            "Content/jquery.js"
         ],
         "persistent": false
     },
@@ -22,7 +23,8 @@
                 "*://www.amazon.com/*"
             ],
             "js": [
-                "Content/content.js"
+                "Content/content.js",
+                "Content/jquery.js"
             ]
         }
     ],
