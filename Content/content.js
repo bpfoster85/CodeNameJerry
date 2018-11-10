@@ -17,7 +17,7 @@ if (url.includes("checkout")) {
             inject.querySelector("#initialDonation").innerText = initialDonation;
             var initialFedStudents = Math.ceil(initialDonation / .50);
             inject.querySelector("#initialFedStudents").innerText = Math.ceil(initialDonation / .50);
-            
+
             inject.querySelector("#donation-slider").value = initialFedStudents;
 
             document.body.insertBefore(inject, document.body.firstChild);
@@ -50,8 +50,19 @@ else if (url == "https://www.amazon.com/gp/buy/spc/handlers/display.html?hasWork
 }
 
 function donateButtonClick(event) {
-    var amountDonated =  $('#initialDonation').text();
-    var numChildrenFed = 90; // Add get from database
-    var htmlStr = "<div>Thank you for your donation of $" + amountDonated + "!</div><div>The total Number of Children you have fed is: " + numChildrenFed + "</div>";
-    $(".overlay-content").html(htmlStr);
+    var amountDonated = $('#initialDonation').text();
+    SaveOneTimeDonation(amountDonated, function () {
+        GetAllDonations(function (result) {
+            console.log(result);
+            var donations = result.DonationList.Donations;
+            var totalChildenFed = 0;
+            for (var i = 0; i < donations.length; i++) {
+                totalChildenFed += donations[i].Amount;
+            }
+            totalChildrenFed = Math.ceil(totalChildenFed / .50);
+            var htmlStr = "<div>Thank you for your donation of $" + amountDonated + "!</div><div>The total Number of Children you have fed is: " + totalChildrenFed + "</div>";
+            $(".overlay-content").html(htmlStr);
+        })
+    });
 }
+

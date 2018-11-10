@@ -4,30 +4,28 @@ function Donation(donType, amount, date) {
     this.DonationDate = date;
 }
 
-function SaveOneTimeDonation(amt) {
+function SaveOneTimeDonation(amt, callBack) {
     var don = new Donation(1, amt, new Date());
-    this.MainSave(don);
+    this.MainSave(don, callBack);
 }
-function SaveWeeklyDonation(amt) {
+function SaveWeeklyDonation(amt, callBack) {
     var don = new Donation(2, amt, new Date());
-    this.MainSave(don);
+    this.MainSave(don, callBack);
 }
-function SaveMonthlyDonation(amt) {
+function SaveMonthlyDonation(amt, callBack) {
     var don = new Donation(3, amt, new Date());
-    this.MainSave(don);
+    this.MainSave(don, callBack);
 }
-function MainSave(donation) {
-    chrome.storage.sync.get("DonationList", function (result) {        
+function MainSave(donation, callBack) {
+    GetAllDonations(function (result) {
         result.DonationList.Donations.push(donation);
-    chrome.storage.sync.set({ "DonationList": result.DonationList }, function () {
-        console.log(result.DonationList );
+        chrome.storage.sync.set({ "DonationList": result.DonationList }, callBack);
     });
-});    
 }
-function GetAllDonations() {    
+
+function GetAllDonations(callBack) {
     chrome.storage.sync.get("DonationList", function (result) {
-        console.log(result);
-    return result;
-    });    
+        callBack(result);
+    });
 }
 
