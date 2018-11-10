@@ -44,3 +44,12 @@
     width: 80%;
     display: inline-block
 }
+
+#close{
+    float: right;
+    border: none;
+    background: transparent;
+    color: #ddd;
+    font-weight: bold;
+    cursor: pointer;
+}
