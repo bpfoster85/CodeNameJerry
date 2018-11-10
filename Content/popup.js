@@ -8,6 +8,7 @@ $(function () {
         SwitchView();
         if ($('#moreinfosection').is(":visible")) {
             GetReaccuringPaymentData();
+            GetHistoryPaymentData();
         }
 
     });
@@ -28,15 +29,14 @@ $(function () {
         alert("Share link to install chrome extension using email")
     });
     $("#donate").click(function () {
-        GetUserData();
-
+        Donate();
     })
 
 });
-function GetUserData() {
+function Donate() {
     var kidCount = $("#donation-slider").val();
     var freq = $("#freq").val();
-    var subtotal = kidCount * .50;
+    var subtotal = kidCount * 5;
 
     var don;
     if (freq == 1) {
@@ -48,13 +48,13 @@ function GetUserData() {
     else {
         don = new Donation(3, subtotal, new Date());
     }
-    
-    chrome.storage.sync.get("DonationList", function (result) {        
+
+    chrome.storage.sync.get("DonationList", function (result) {
         result.DonationList.Donations.push(don);
-    chrome.storage.sync.set({ "DonationList": result.DonationList }, function () {        
-        $("#donate").html('<i class="material-icons left">face</i>Donate!');
+        chrome.storage.sync.set({ "DonationList": result.DonationList }, function () {
+            $("#donate").html('<i class="material-icons left">face</i>Donate!');
+        });
     });
-});  
 }
 function SwitchView() {
     $("#maincontent").toggle();
@@ -62,19 +62,70 @@ function SwitchView() {
     $('#donate').toggle();
 }
 
-function GetReaccuringPaymentData() {
+function GetHistoryPaymentData() {
     var results = [];
     var tableTemplate = [];
+    $("#reaccuringdatalayout").html('');
+tableTemplate.push('<tr><td class="subtitle">Payment Type</td>'+
+'<td class="subtitle">Amount</td><td class="subtitle">Donation Date</td></tr>');
 
     chrome.storage.sync.get("DonationList", function (result) {
         results = result.DonationList.Donations;
         $.each(results, function (i, d) {
-            if (d.DonationType != 1) {
-                var dTemplate = "<tr><td>" + d.Amount + "</td><td>" + d.DonationDate + "</td><tr>";
-                tableTemplate.push(dTemplate);
+            var pType;
+            switch (d.DonationType) {
+                case 1:
+                pType = "One-Time";
+                    break;
+                case 2:
+                pType = "Weekly";
+                    break;
+                case 3:
+                pType = "Monthly";
+                    break;
             }
+
+            var dTemplate = "<tr><td>"+pType +"</td><td>$" 
+            + d.Amount.toFixed(2) + "</td><td>" + new Date(d.DonationDate) + "</td><tr>";
+            tableTemplate.push(dTemplate);
+
+
         });
-        $("#reaccuringdatalayout").appendTo(tableTemplate.join(""));
+        $("#historydatalayout").append(tableTemplate.join(''));
+    });
+}
+function GetReaccuringPaymentData() {
+    var results = [];
+    var tableTemplate = [];
+    $("#reaccuringdatalayout").html('');
+tableTemplate.push('<tr><td class="subtitle">Payment Type</td>'+
+'<td class="subtitle">Amount</td><td class="subtitle">Donation Date</td></tr>');
+
+    chrome.storage.sync.get("DonationList", function (result) {
+        results = result.DonationList.Donations;
+        $.each(results, function (i, d) {
+            var pType;
+            switch (d.DonationType) {
+                case 1:
+                pType = "One-Time";
+                    break;
+                case 2:
+                pType = "Weekly";
+                    break;
+                case 3:
+                pType = "Monthly";
+                    break;
+            }
+
+            var dTemplate = "<tr><td>"+pType +"</td><td>$" 
+            if(d.DonationType != 1){
+            + d.Amount.toFixed(2) + "</td><td>" + new Date(d.DonationDate) + "</td><tr>";
+            tableTemplate.push(dTemplate);
+            }
+
+
+        });
+        $("#reaccuringdatalayout").append(tableTemplate.join(''));
     });
 }
 
