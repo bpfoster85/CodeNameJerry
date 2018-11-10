@@ -22,7 +22,11 @@ $(function () {
         $("#stickDiv").html("");
         $("#donate").html('<i class="material-icons left">face</i>Donate $' + (event.currentTarget.value * 5).toFixed(2));
         for (i = 0; i < event.currentTarget.value; i++) {
-            $("#stickDiv").append('<img src="https://static.thenounproject.com/png/203593-200.png" width = "20px" height="20px"/>');
+            if(i %2 == 0){
+                $("#stickDiv").append('<img src="http://icons-for-free.com/free-icons/png/512/570640.png" width = "30px" height="30px"/>');
+            }else{
+                $("#stickDiv").append('<img src="https://image.flaticon.com/icons/png/512/146/146010.png" width = "30px" height="30px"/>');
+            }
         }
     });
     $("#eshare").click(function () {

@@ -11,6 +11,14 @@
 </head>
 
 <body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
     <header>
         <img src="../Images/gkLogo.png">
     </header>
@@ -18,10 +26,11 @@
         <section id="donationamt">
             <div class="slidercontrol">
                 <div id="stickDiv">
-                    <img src="https://static.thenounproject.com/png/203593-200.png" width="20px" height="20px" />
-                    <img src="https://static.thenounproject.com/png/203593-200.png" width="20px" height="20px" />
-                    <img src="https://static.thenounproject.com/png/203593-200.png" width="20px" height="20px" />
-                </div>
+                        <img src="http://icons-for-free.com/free-icons/png/512/570640.png" width="30px" height="30px" />
+                        <img src="https://image.flaticon.com/icons/png/512/146/146010.png" width="30px" height="30px" />
+                        <img src="http://icons-for-free.com/free-icons/png/512/570640.png" width="30px" height="30px" />                        
+                    </div>
+
                 <p id="slider-wrapper" class="range-field">
                     <input type="range" id="donation-slider" value="3" min="1" max="10" />
                 </p>
@@ -73,8 +82,8 @@
     <div id="moreinfosection">
         <section>
             <div class="title">Share Donation Extension</div>
-            <div id="shareicons">
-                <i id="fbshare" class="shareicon fab fa-facebook-square fa-7x"></i>
+            
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgranitekids.org%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore shareicon fab fa-facebook-square fa-7x"></a>
                 <i id="tshare" class="shareicon fab fa-twitter-square fa-7x"></i>
                 <i id="eshare" class="shareicon fas fa-envelope-square fa-7x"></i>
             </div>
