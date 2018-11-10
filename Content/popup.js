@@ -1,10 +1,4 @@
 $(function () {
-<<<<<<< HEAD
-    $("#changeme").html('world');
-    
-    $('.dropdown-trigger').dropdown();
-});
-=======
     $("#moreinfosection").hide();
     $("#maincontent").toggle();
     $("#moreinfosection").toggle();
@@ -18,6 +12,12 @@ $(function () {
     $("#tshare").click(function () {
         alert("Share link to install chrome extension on Twitter")
     });
+    $("#donation-slider").onInput(function(event) {
+        $("#stickDiv").html("");
+        for (i = 0; i < event.path[0].value; i++) {
+            $("#stickDiv").append('<img src="https://static.thenounproject.com/png/203593-200.png" width = "20px" height="20px"/>');
+        }
+    });
     $("#eshare").click(function () {
         alert("Share link to install chrome extension using email")
     });
@@ -30,4 +30,3 @@ $(function () {
 function SeeData() {
     alert(GetAllDonations());
 }
->>>>>>> 505ce924cc1684e619ae6d9459ba162f10582034
