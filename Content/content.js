@@ -56,7 +56,8 @@ else if (url == "https://www.amazon.com/gp/buy/spc/handlers/display.html?hasWork
 
 function donateButtonClick(event) {
     var amountDonated = $('#initialDonation').text();
-    SaveOneTimeDonation(amountDonated, function () {
+    
+    SaveOneTimeDonation(parseFloat(amountDonated), function () {
         GetAllDonations(function (result) {
             console.log(result);
             var donations = result.DonationList.Donations;
