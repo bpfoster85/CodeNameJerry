@@ -24,7 +24,8 @@
             ],
             "js": [
                 "Content/content.js",
-                "Content/jquery.js"
+                "Content/jquery.js",
+                "Content/materialize.min.js"
             ],
             "css": [
                 "CSS/overlay.css",

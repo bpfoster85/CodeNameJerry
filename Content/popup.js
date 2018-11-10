@@ -13,9 +13,10 @@ $(function () {
     $("#tshare").click(function () {
         alert("Share link to install chrome extension on Twitter")
     });
-    $("#donation-slider").onInput(function(event) {
+    $("#donation-slider").on("input", function(event) {
+        console.log(event);
         $("#stickDiv").html("");
-        for (i = 0; i < event.path[0].value; i++) {
+        for (i = 0; i < event.currentTarget.value; i++) {
             $("#stickDiv").append('<img src="https://static.thenounproject.com/png/203593-200.png" width = "20px" height="20px"/>');
         }
     });
