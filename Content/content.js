@@ -6,18 +6,30 @@ if (url.includes("checkout")) {
         // xmlHttp = new XMLHttpRequest();
         // xmlHttp.open( "GET", chrome.runtime.getURL ("Views/overlay.html"), false );
         // xmlHttp.send( null );
-        
-        $.get(chrome.runtime.getURL('Views/overlay.html'), function(data) {
-            var inject  = document.createElement("div");
+
+        $.get(chrome.runtime.getURL('Views/overlay.html'), function (data) {
+            var inject = document.createElement("div");
             inject.innerHTML = data;
             var totalMoneyDouble = moneyAmount.substring(moneyAmount.indexOf('$') + 1, moneyAmount.indexOf(' '));
             inject.querySelector("#totalSpent").innerText = totalMoneyDouble;
-            var initialDonation =  (100 - totalMoneyDouble.substring(totalMoneyDouble.indexOf('.') + 1)) * 0.01;
+            var initialDonation = (100 - totalMoneyDouble.substring(totalMoneyDouble.indexOf('.') + 1)) * 0.01;
             inject.querySelector("#initialDonation").innerText = initialDonation;
+            var initialFedStudents = Math.ceil(initialDonation / .50);
             inject.querySelector("#initialFedStudents").innerText = Math.ceil(initialDonation / .50);
-            document.body.insertBefore (inject, document.body.firstChild);
+            
+            inject.querySelector("#donation-slider").value = initialFedStudents;
+           
+            document.body.insertBefore(inject, document.body.firstChild);
+
+            inject.querySelector("#donation-slider").addEventListener("input", (event) => {
+                console.log(event.path[0].value);
+                $("#stickDiv").html("")
+                for (i = 0; i < event.path[0].value; i++) {
+                    $("#stickDiv").append('<img src="https://static.thenounproject.com/png/203593-200.png" width = "20px" height="20px"/>');
+                }
+            });
         });
-       
+
     }, 1000);
 }
 
