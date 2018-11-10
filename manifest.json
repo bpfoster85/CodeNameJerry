@@ -1,22 +1,39 @@
 {
     "name": "Project Jerry",
     "version": "1.0",
-    "default_locale":"en",
+    "default_locale": "en",
     "description": "Donation Extension for Granite",
     "manifest_version": 2,
-    "background":{
-        "scripts":["BackgroundEvents/background.js"],
-        "persistent":false
+    "background": {
+        "scripts": [
+            "BackgroundEvents/background.js"
+        ],
+        "persistent": false
     },
     "icons": {
         "16": "Images/apple16.png",
         "48": "Images/apple48.png",
         "128": "Images/apple128.png"
-      },
-    "permissions": ["notifications","system.storage","tabs"],
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.paypal.com/*",
+                "*://www.amazon.com/*"
+            ],
+            "js": [
+                "Content/content.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "notifications",
+        "system.storage",
+        "tabs"
+    ],
     "browser_action": {
         "default_icon": "Images/apple48.png",
         "default_title": "Do action",
-        "default_popup": "Views/options.html" 
+        "default_popup": "Views/options.html"
     }
-  }
+}
