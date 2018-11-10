@@ -1,0 +1,5 @@
+.overlay {
+    z-index: 999;
+    background-color: #fff;
+    box-shadow: 4px 4px;
+}
