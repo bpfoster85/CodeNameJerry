@@ -66,6 +66,11 @@ hr {
      margin-right:1em;
      background-color:#A7222E;
  }
+ #kidsfed{
+     font-size:16px;
+     margin-left:3em;
+     color:#5C9449;
+ }
 #shareicons{
     width:100%;
     text-align: center;
@@ -76,7 +81,7 @@ hr {
 }
 
  #fbshare{
-     color: #3B5998;
+     color: #365899;
  }
  #tshare{
     color: #1DA1F2;

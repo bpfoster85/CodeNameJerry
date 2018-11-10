@@ -92,7 +92,8 @@ if (url.includes("checkout")) {
 
 function donateButtonClick(event) {
     var amountDonated = $('#initialDonation').text();
-    SaveOneTimeDonation(amountDonated, function () {
+    
+    SaveOneTimeDonation(parseFloat(amountDonated), function () {
         GetAllDonations(function (result) {
             console.log(result);
             var donations = result.DonationList.Donations;

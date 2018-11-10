@@ -5,15 +5,18 @@ function Donation(donType, amount, date) {
 }
 
 function SaveOneTimeDonation(amt, callBack) {
-    var don = new Donation(1, amt, new Date());
+    var date = new Date().getFullYear() + "/" + (new Date().getMonth()) + "/" + new Date().getDate();
+    var don = new Donation(1, amt, date);
     this.MainSave(don, callBack);
 }
 function SaveWeeklyDonation(amt, callBack) {
-    var don = new Donation(2, amt, new Date());
+    var date = new Date().getFullYear() + "/" + (new Date().getMonth()) + "/" + new Date().getDate();
+    var don = new Donation(2, amt, date);
     this.MainSave(don, callBack);
 }
 function SaveMonthlyDonation(amt, callBack) {
-    var don = new Donation(3, amt, new Date());
+    var date = new Date().getFullYear() + "/" + (new Date().getMonth()) + "/" + new Date().getDate();
+    var don = new Donation(3, amt, date);
     this.MainSave(don, callBack);
 }
 function MainSave(donation, callBack) {
