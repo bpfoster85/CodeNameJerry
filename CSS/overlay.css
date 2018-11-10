@@ -1,5 +1,14 @@
 .overlay {
     z-index: 999;
     background-color: #fff;
-    box-shadow: 4px 4px;
+    box-shadow: 2px 2px #00000033;
+    position: fixed;
+    float: right;
+    right: 5%;
+    top: 20%;
+}
+
+#overlay-header {
+    height: 20px;
+    background-color: green;
 }
