@@ -29,7 +29,8 @@
     "permissions": [
         "notifications",
         "system.storage",
-        "tabs"
+        "tabs",
+        "extension"
     ],
     "browser_action": {
         "default_icon": "Images/apple48.png",
