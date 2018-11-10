@@ -2,7 +2,7 @@
     "name": "Project Jerry",
     "version": "1.0",
     "default_locale": "en",
-    "description": "Donation Extension for Granite",
+    "description": "Donation Extension for Granite Kids",
     "manifest_version": 2,
     "background": {
         "scripts": [
@@ -29,12 +29,11 @@
     "permissions": [
         "notifications",
         "system.storage",
-        "tabs",
-        "extension"
+        "tabs"
     ],
     "browser_action": {
         "default_icon": "Images/apple48.png",
-        "default_title": "Do action",
-        "default_popup": "Views/options.html"
+        "default_title": "Granite Kids",
+        "default_popup": "Views/popup.html"
     }
 }
