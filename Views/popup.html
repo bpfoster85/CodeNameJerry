@@ -5,6 +5,8 @@
     <title>Page Title</title>
     <link href="../Content/materialize.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
     <link href="../CSS/popup.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -12,74 +14,94 @@
     <header>
         <img src="../Images/gkLogo.png">
     </header>
-    <section id="donationamt">
-        <p>slider to pick amount and feeding the kids</p>
-        <div class="row">
-            <div class="col s9">
-                <form action="#">
-                    <p class="range-field">
-                        <input type="range" id="test5" min="0" max="100" />
-                    </p>
-                </form>
-            </div>
-            <div class="col s3">
-                <!-- Dropdown Trigger -->
-                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+    <div id="maincontent">
+        <section id="donationamt">
+            <p>slider to pick amount and feeding the kids</p>
+            <div class="row">
+                <div class="col s9">
+                    <form action="#">
+                        <p class="range-field">
+                            <input type="range" id="test5" min="0" max="100" />
+                        </p>
+                    </form>
+                </div>
+                <div class="col s3">
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
 
 
-                <!-- Dropdown Structure -->
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="#!">three</a></li>
-                    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                </ul>
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="#!">one</a></li>
+                        <li><a href="#!">two</a></li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li><a href="#!">three</a></li>
+                        <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                        <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <section id="contactform">
-        <p>contact form to put in information</p>
-        <div class="row">
-            <div class="col s6">
-                <input id="first_name" type="text" class="materialize-textarea">
-                <label for="first_name">First Name</label>
+        <section id="contactform">
+            <p>contact form to put in information</p>
+            <div class="row">
+                <div class="col s6">
+                    <input id="first_name" type="text" class="materialize-textarea">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="col s6">
+                    <input id="last_name" type="text" class="materialize-textarea">
+                    <label for="last_name">Last Name</label>
+                </div>
             </div>
-            <div class="col s6">
-                <input id="last_name" type="text" class="materialize-textarea">
-                <label for="last_name">Last Name</label>
+            <div class="row">
+                <div class="col s6">
+                    <input id="email" type="text" class="materialize-textarea">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col s6">
+                    <input id="address_line_1" type="text" class="materialize-textarea">
+                    <label for="last_name">Address Line 1</label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col s6">
-                <input id="email" type="text" class="materialize-textarea">
-                <label for="email">Email</label>
+            <div class="row">
+                <div class="col s6">
+                    <input id="address_line_1" type="text" class="materialize-textarea">
+                    <label for="last_name">Address Line 1</label>
+                </div>
+                <div class="col s6">
+                    <input id="phone" type="text" class="materialize-textarea">
+                    <label for="phone">Phone</label>
+                </div>
             </div>
-            <div class="col s6">
-                <input id="address_line_1" type="text" class="materialize-textarea">
-                <label for="last_name">Address Line 1</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s6">
-                <input id="address_line_1" type="text" class="materialize-textarea">
-                <label for="last_name">Address Line 1</label>
-            </div>
-            <div class="col s6">
-                <input id="phone" type="text" class="materialize-textarea">
-                <label for="phone">Phone</label>
-            </div>
-        </div>
 
-    </section>
+        </section>
+    </div>
+    <div id="moreinfosection">
+        <section>
+            <div class="title">Share Donation Extension</div>
+            <div id="shareicons">
+                <i id="fbshare" class="shareicon fab fa-facebook-square fa-7x"></i>
+                <i id="tshare" class="shareicon fab fa-twitter-square fa-7x"></i>
+                <i id="eshare" class="shareicon fas fa-envelope-square fa-7x"></i>
+            </div>
+        </section>
+        <section>
+            <div class="title">Payment Plans</div>
+            <div id="initdb">InitDB</div>
+            <div id="viewdata">ViewData</div>
+
+        </section>
+    </div>
     <footer>
-        <a class="waves-effect waves-light btn"><i class="material-icons left">grain</i>Share</a>
+        <a id="moreinfo" class="waves-effect waves-light btn"><i class="material-icons left">grain</i>More Info</a>
     </footer>
     <script src="../Content/jquery.js"></script>
+    <script src="../Content/DBTrans.js"></script>
     <script src="../Content/popup.js"></script>
+
 </body>
 
 </html>
