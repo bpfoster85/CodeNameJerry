@@ -1,4 +1,10 @@
 $(function () {
+<<<<<<< HEAD
+    $("#changeme").html('world');
+    
+    $('.dropdown-trigger').dropdown();
+});
+=======
     $("#moreinfosection").hide();
     $("#maincontent").toggle();
     $("#moreinfosection").toggle();
@@ -24,3 +30,4 @@ $(function () {
 function SeeData() {
     alert(GetAllDonations());
 }
+>>>>>>> 505ce924cc1684e619ae6d9459ba162f10582034
