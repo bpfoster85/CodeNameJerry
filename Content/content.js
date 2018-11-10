@@ -27,9 +27,9 @@ if (url.includes("checkout")) {
                 $("#stickDiv").html("")
                 for (i = 0; i < event.path[0].value; i++) {
                     if(i %2 == 0){
-                        $("#stickDiv").append('<img src="http://icons-for-free.com/free-icons/png/512/570640.png" width = "40px" height="40px"/>');
+                        $("#stickDiv").append('<img src="https://cdn2.iconfinder.com/data/icons/little-girl/512/little_girl_grey.png" width = "25px" height="25px"/>');
                     }else{
-                        $("#stickDiv").append('<img src="https://image.flaticon.com/icons/png/512/146/146010.png" width = "40px" height="40px"/>');
+                        $("#stickDiv").append('<img src="https://image.flaticon.com/icons/png/512/146/146010.png" width = "25px" height="25px"/>');
                     }
                 }
                 var donation = .50 * event.path[0].value;
@@ -40,7 +40,7 @@ if (url.includes("checkout")) {
             inject.querySelector("#payPalImg").addEventListener("click", (event) => donateButtonClick(event));
 
             inject.querySelector("#close").addEventListener("click", (event) => {
-                $("#wholeContainer").remove();
+                $(".overlay-root").remove();
                 console.log("SUP")
             });
         });

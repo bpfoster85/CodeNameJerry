@@ -65,3 +65,10 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+#fact{
+    font-style: italic;
+    padding-top: 15px;
+    width: 60%;
+    display: inline-block;
+}
