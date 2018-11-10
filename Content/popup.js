@@ -1,4 +1,3 @@
 $(function(){
-$("#changeme").html('world');
-
+    $("#changeme").html('world');
 });
