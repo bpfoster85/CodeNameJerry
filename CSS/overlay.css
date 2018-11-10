@@ -6,9 +6,20 @@
     float: right;
     right: 5%;
     top: 20%;
+    padding: 1px;
 }
 
 #overlay-header {
     height: 20px;
     background-color: green;
+    box-shadow: 0px 2px #00000033;;
+}
+
+.overlay-content {
+    padding: 10px;
+    text-align: center;
+}
+
+.overlay-bold {
+    font-weight: bold;
 }
