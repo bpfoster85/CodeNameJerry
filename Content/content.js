@@ -39,6 +39,11 @@ if (url.includes("checkout")) {
                 var htmlStr = "<div>Thank you for your donation of $" + amountDonated + "!</div><div>The total Number of Children you have fed is: " + numChildrenFed + "</div>";
                 $(".overlay-content").html(htmlStr);
             });
+
+            inject.querySelector("#close").addEventListener("click", (event) => {
+                $("#wholeContainer").remove();
+                console.log("SUP")
+            });
         });
 
     }, 1000);
