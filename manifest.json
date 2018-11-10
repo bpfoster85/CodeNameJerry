@@ -34,7 +34,6 @@
     ],
     "permissions": [
         "notifications",
-        "system.storage",
         "tabs",
         "storage"        
     ],

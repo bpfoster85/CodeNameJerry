@@ -1,4 +1,5 @@
 $(function () {
+
     $("#moreinfosection").hide();
     $("#maincontent").toggle();
     $("#moreinfosection").toggle();
@@ -21,9 +22,13 @@ $(function () {
     $("#eshare").click(function () {
         alert("Share link to install chrome extension using email")
     });
-    $("#initdb").click();
-    $("#viewdata").click(function () {
-        SeeData();
+    $("#initdb").click(
+        function () {
+            SaveOneTimeDonation(123.00);
+            GetAllDonations();
+        });
+    $("#viewdata").click(function () {        
+        GetAllDonations();
     });
 });
 

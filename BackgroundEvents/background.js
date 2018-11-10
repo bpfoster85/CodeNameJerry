@@ -12,11 +12,6 @@ function InitializeDatabase() {
             LastName: 'Fred'
         }
     }
-
-    chrome.storage.sync.get("DonationList", function (result) {
-        if (result === undefined) {
-            chrome.storage.sync.set({ "DonationList": AllDonations }, function () { });
-        }
-    });
+    chrome.storage.sync.set({ 'DonationList': AllDonations }, function () {});
 
 }
