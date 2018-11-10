@@ -29,12 +29,14 @@
     "permissions": [
         "notifications",
         "system.storage",
-        "tabs",
-        "extension"
+        "tabs"
     ],
     "browser_action": {
         "default_icon": "Images/apple48.png",
         "default_title": "Do action",
         "default_popup": "Views/options.html"
-    }
+    },
+    "web_accessible_resources": [
+        "Views/overlay.html"
+    ]
 }
