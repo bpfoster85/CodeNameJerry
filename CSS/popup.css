@@ -7,11 +7,6 @@
      min-height:500px;
      margin:0;
  }
- 
- h1{
-     color:green;
-     margin:0;
- }
  header{
      text-align:center;
      background-color: #333333;
@@ -19,6 +14,7 @@
      height:8em;
      border-bottom: 8px solid #B5BD00;
  }
+<<<<<<< HEAD
  
  /* Dropdown Button */
 .dropbtn {
@@ -61,3 +57,15 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #939B00;}
+=======
+ footer{
+    background-color: #333333;
+    padding:1em;
+    height:3em;
+    width:100%;
+    position:absolute;
+    color:#fff;
+    bottom:0;
+    border-top: 8px solid #B5BD00;
+ }
+>>>>>>> 493680447b198af8788265283d905fa7221c9f1a
