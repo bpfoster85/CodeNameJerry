@@ -7,10 +7,11 @@
     right: 5%;
     top: 20%;
     padding: 1px;
+    width: 350px;
 }
 
 #overlay-header {
-    height: 20px;
+    height: 30px;
     background-color: green;
     box-shadow: 0px 2px #00000033;;
 }
@@ -18,8 +19,27 @@
 .overlay-content {
     padding: 10px;
     text-align: center;
+    align-content: center;
 }
 
 .overlay-bold {
     font-weight: bold;
+}
+
+#stickDiv {
+    border: solid black 1px;
+    vertical-align: middle;
+    padding: 3px;
+    width: 80%;
+    display: inline-block
+}
+
+#payPalImg{
+    width: 50%;
+    padding-top: 15px;
+}
+
+#slider-wrapper {
+    width: 80%;
+    display: inline-block
 }

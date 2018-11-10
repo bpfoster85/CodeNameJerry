@@ -1,4 +1,5 @@
 $(function () {
+
     $("#moreinfosection").hide();
     $("#maincontent").toggle();
     $("#moreinfosection").toggle();
