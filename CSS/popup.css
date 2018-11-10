@@ -7,11 +7,6 @@
      min-height:500px;
      margin:0;
  }
- 
- h1{
-     color:green;
-     margin:0;
- }
  header{
      text-align:center;
      background-color: #333333;
@@ -19,4 +14,50 @@
      height:8em;
      border-bottom: 8px solid #B5BD00;
  }
+ footer{
+    background-color: #333333;
+    padding:1em;
+    height:6em;
+    width:100%;
+    position:absolute;
+    color:#fff;
+    bottom:0;
+    border-top: 8px solid #B5BD00;
+ }
+
+ /****************Bryan**************/
  
+
+ /****************Chris**************/
+ 
+.dropbtn {
+    background-color: #B5BD00;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #444;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #939B00;}
+
